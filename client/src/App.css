@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+p {
+    padding: 0;
+}
+
+
+/*StartMenu.js*/
+#navbar {
+    display: flex;
+    column-gap: 20px;
+    font-size: x-large;
+}
+
+/*Login.js & Signup.js*/
+.forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#form-grid {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.form-col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+/*Home.js*/
+#home-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-child {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/**/
+#create-tweet-btn {
+    width: 35%;
+    background-color: #1DA1F2;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+
+/*Tweets.js*/
+#tweet-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.tweet {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+
+}
+
+#tweet-text {
+    font-weight: 8;
+}
+
+#tweet-time {
+    text-align: right;
+}
