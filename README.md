@@ -1,3 +1,3 @@
-# Twitter Clone Frontend
+# Twitter Clone 
 
-## Made using React & Tailwind CSS
+## Made using React, Go, MySQL
