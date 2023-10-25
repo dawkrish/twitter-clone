@@ -37,7 +37,7 @@ export default function MyTweets() {
     }
     async function fetchAllTweets() {
         try {
-            const response = await fetch("http://localhost:8080/tweets", {
+            const response = await fetch("http://localhost:8080/mytweets", {
                 method: "get",
                 headers : {
                     "Authorization" : `Bearer ${localStorage.getItem('token')}`
@@ -71,7 +71,7 @@ export default function MyTweets() {
                 <br/>
                 <button id="create-tweet-btn" onClick={handleCreateTweet}>Create Tweet</button>
             </div>
-            <div className={"home-child"}>
+            <div className={"home-child"} id='home-2'>
                 <h1>My Tweets</h1>
                 <Tweets tweets={tweets} isUser={true} />
             </div>
