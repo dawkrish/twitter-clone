@@ -94,3 +94,15 @@ form {
 #tweet-time {
     text-align: right;
 }
+
+/* Overlay */
+.overlay{
+    position : fixed;
+    top : 50%;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    background-color: gainsboro;
+    padding: 5px;
+}
