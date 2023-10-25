@@ -11,7 +11,7 @@ import (
 
 func GetAllTweetsHandler(writer http.ResponseWriter, request *http.Request, db *sql.DB) {
 	tweets, err := GetAllTweets(db)
-	//log.Print("tweets : ", tweets)
+	// log.Print("tweets : ", tweets)
 	if err != nil {
 		RespondWithError(writer, http.StatusBadRequest, "cannot fetch tweets")
 	}
@@ -26,7 +26,7 @@ func GetTweetsByUserIDHandler(writer http.ResponseWriter, request *http.Request,
 	}
 	//log.Print("user id: ", userId)
 	tweets, err := GetTweetsByUserID(db, userId)
-	//log.Print("tweets : ", tweets)
+	// log.Print("tweets : ", tweets)
 	if err != nil {
 		RespondWithError(writer, http.StatusBadRequest, "cannot fetch tweets")
 	}
@@ -39,6 +39,7 @@ func UpdateTweetHandler(writer http.ResponseWriter, request *http.Request, db *s
 
 	userId, err := middlewareAuth(request)
 	if err != nil {
+		log.Print("why this error :/")
 		RespondWithError(writer, http.StatusUnauthorized, err.Error())
 		return
 	}
@@ -48,6 +49,7 @@ func UpdateTweetHandler(writer http.ResponseWriter, request *http.Request, db *s
 	decoder := json.NewDecoder(request.Body)
 	requestBody := requestParams{}
 	err = decoder.Decode(&requestBody)
+	log.Print(requestBody)
 	if err != nil {
 		RespondWithError(writer, http.StatusBadRequest, err.Error())
 		return
@@ -61,7 +63,6 @@ func UpdateTweetHandler(writer http.ResponseWriter, request *http.Request, db *s
 		RespondWithError(writer, http.StatusBadRequest, "tweet does not exist")
 		return
 	}
-	log.Println(oldTweet)
 	if oldTweet.UserID != userId {
 		RespondWithError(writer, http.StatusUnauthorized, "you are not the author of this tweet, you cannot change this tweet")
 		return
