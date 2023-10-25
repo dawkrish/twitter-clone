@@ -51,7 +51,7 @@ func main() {
 		GetAllTweetsHandler(writer, request, db)
 	})
 
-	r.Get("/tweets", func(writer http.ResponseWriter, request *http.Request) {
+	r.Get("/mytweets", func(writer http.ResponseWriter, request *http.Request) {
 		GetTweetsByUserIDHandler(writer, request, db)
 	})
 	r.Post("/tweets", func(writer http.ResponseWriter, request *http.Request) {
